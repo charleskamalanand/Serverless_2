@@ -26,7 +26,9 @@
 	 **3.1** Create role "lambdaRoleForSQSPermissions" and attach below AWS managed IAM policy
 	 
 		**i.**   "AmazonDynamoDBFullAccess"
+		
 		**ii.**  "CloudWatchLogsFullAccess"
+		
 		**iii.** "AWSLambdaSQSQueueExecutionRole"
 		
      **3.2** Create Python Lambda "productVisitsDataHandler" for sending data to DynamoDB and add "lambdaRoleForSQSPermissions" role and copy the contents from "productVisitsDataHandler.py"
@@ -60,21 +62,35 @@
   3. Create Python Lambda "productVisitsSendDataToQueue" for sending data to SQS and add "productVisitsSendMessageLambdaRole" role and copy the contents from "productVisitsSendDataToQueue.py" (replace account number / region / names as required)
   
   4. Create Amazon API Gateway called "productVisit" with below details.
+  
 	**i.** Endpoint type : Regional
+	
 	**ii.** Resource name : productdetails
+	
 	**iii.** Resource path: /productdetails
+	
 	**iv.** Enable CORS
+	
 	**v.** Type: POST
+	
 	**vi.** Integration type: Lambda function
+	
 	**vii.** Function: productVisitsSendDataToQueue
+	
 	**viii.** Deploy API - Actions --> Deploy API -->new stage called "dev"
  
   5. Create a bucket with below details.
+	
 	**i.** Name: product-visits-webform
+	
 	**ii.** Updates: Add letters/numbers to bucket name to be unique
+	
 	**iii.** Region: us-east-1
+	
 	**iv.** Turn off block public access
+	
 	**v.** Enable static website hosting
+	
 	**vi.** Index: productDetails.html (replace account number / region / names as required)
 	
 	Use the below bucket policy
