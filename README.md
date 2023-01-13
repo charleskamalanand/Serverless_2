@@ -106,7 +106,7 @@
 					"s3:GetObject",
 					"s3:GetObjectVersion"
 				],
-				"Resource": "arn:aws:s3:::charleskamalanandpublic/*"
+				"Resource": "arn:aws:s3:::product-visits-webform/*"
 			}
 		]
 		}
