@@ -63,35 +63,35 @@
   
   4. Create Amazon API Gateway called "productVisit" with below details.
   
-	**i.** Endpoint type : Regional
+		**i.** Endpoint type : Regional
 	
-	**ii.** Resource name : productdetails
+		**ii.** Resource name : productdetails
 	
-	**iii.** Resource path: /productdetails
+		**iii.** Resource path: /productdetails
 	
-	**iv.** Enable CORS
+		**iv.** Enable CORS
 	
-	**v.** Type: POST
+		**v.** Type: POST
 	
-	**vi.** Integration type: Lambda function
+		**vi.** Integration type: Lambda function
 	
-	**vii.** Function: productVisitsSendDataToQueue
+		**vii.** Function: productVisitsSendDataToQueue
 	
-	**viii.** Deploy API - Actions --> Deploy API -->new stage called "dev"
+		**viii.** Deploy API - Actions --> Deploy API -->new stage called "dev"
  
   5. Create a bucket with below details.
 	
-	**i.** Name: product-visits-webform
+		**i.** Name: product-visits-webform
 	
-	**ii.** Updates: Add letters/numbers to bucket name to be unique
+		**ii.** Updates: Add letters/numbers to bucket name to be unique
 	
-	**iii.** Region: us-east-1
+		**iii.** Region: us-east-1
 	
-	**iv.** Turn off block public access
+		**iv.** Turn off block public access
 	
-	**v.** Enable static website hosting
+		**v.** Enable static website hosting
 	
-	**vi.** Index: productDetails.html (replace account number / region / names as required)
+		**vi.** Index: productDetails.html (replace account number / region / names as required)
 	
 	Use the below bucket policy
 	```bash
