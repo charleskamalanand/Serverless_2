@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Product details</title>
+    <!-- Add some CSS to change client UI -->
+    <style>
+    //body {
+    //   background-color: #232F3E;
+    //    }
+    label, button {
+        color: #FF9900;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 40px;
+        }
+     input {
+        color: #232F3E;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+        }
+    </style>
+    <script>
+        // define the callAPI function that takes a first name and last name as parameters
+       // var callAPI = (productName,productId,category,pricePerUnit,customerId,customerName,timeOfVisit)=>{
+            
+		var callAPI = (productName,productId,category,pricePerUnit,customerId,customerName)=>{
+			// instantiate a headers object
+            var myHeaders = new Headers();
+			var timeOfVisit1 = new Date();
+			var timeOfVisit = timeOfVisit1.toISOString()
+            // add content type header to object
+            myHeaders.append("Content-Type", "application/json");
+            // using built in JSON utility package turn object to string and store in a variable
+            var raw = JSON.stringify({"ProductName":productName,"ProductId":productId,"Category":category,"PricePerUnit":pricePerUnit,"CustomerId":customerId,"CustomerName":customerName,"TimeOfVisit":timeOfVisit});
+            // create a JSON object with parameters for API call and store in a variable
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            // make API call with parameters and use promises to get response
+            fetch("https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/dev/productdetails", requestOptions)
+            .then(response => response.text())
+            .then(result => alert(JSON.parse(result).body))
+            .catch(error => console.log('error', error));
+			document.getElementById('productName').value=''
+			document.getElementById('productId').value=''
+			document.getElementById('category').value=''
+			document.getElementById('pricePerUnit').value=''
+			document.getElementById('customerId').value=''
+			document.getElementById('customerName').value=''
+			//document.getElementById('timeOfVisit').value=''
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>ProductName :</label>
+        <input type="text" id="productName">
+		<br></br>		
+		<label>ProductId :</label>
+        <input type="text" id="productId">
+		<br></br>		
+        <label>Category :</label>
+        <input type="text" id="category">
+		<br></br>		
+		<label>PricePerUnit :</label>
+        <input type="text" id="pricePerUnit">
+		<br></br>		
+        <label>CustomerId :</label>
+        <input type="text" id="customerId">
+		<br></br>		
+        <label>CustomerName :</label>
+        <input type="text" id="customerName">
+		<br></br>
+		<!-- 		
+        <label>TimeOfVisit :</label>
+        <input type="text" id="timeOfVisit">
+		<br></br>		
+		-->
+		<button type="button" onclick="callAPI(document.getElementById('productName').value,document.getElementById('productId').value,document.getElementById('category').value,document.getElementById('pricePerUnit').value,document.getElementById('customerId').value,document.getElementById('customerName').value)">Add to Queue</button>
+    </form>
+</body>
+</html>
