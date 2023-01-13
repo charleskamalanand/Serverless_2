@@ -1,6 +1,8 @@
 ## Highlights
 
 * Details on how to records details entered in the S3 website to DynamoDB and further save the files as JSON in S3 
+* End user's product detailed entered in the website will be pushed to dynomoDB through API gateway and SQS
+* Streams are used to monitor real time changes in dynamoDB which is then pushed to S3 where queries are can run using Athena
 
 ## Architecture
 <p align="center">
