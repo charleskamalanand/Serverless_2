@@ -24,6 +24,7 @@
   3. Create Lambda function
 		
 	 **3.1** Create role "lambdaRoleForSQSPermissions" and attach below AWS managed IAM policy
+	 
 		**i.**   "AmazonDynamoDBFullAccess"
 		**ii.**  "CloudWatchLogsFullAccess"
 		**iii.** "AWSLambdaSQSQueueExecutionRole"
