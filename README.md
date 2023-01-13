@@ -7,10 +7,6 @@
   <img src="Slide.png" width="450" height="300" title="Architecture"> 
 </p>
 
-<p align="center">
-  <img src="stepfunctions_graph.png" width="450" height="300" title="Architecture"> 
-</p>
-
 ## Steps to replicate
 ## PART 1 - SQS - Lambda - DynamoDB Table ##
   
@@ -82,19 +78,19 @@
 	
 	Use the below bucket policy
 	```bash
-	{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicRead",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": [
-                "s3:GetObject",
-                "s3:GetObjectVersion"
-            ],
-            "Resource": "arn:aws:s3:::charleskamalanandpublic/*"
-        }
-    ]
-	}
+		{
+		"Version": "2012-10-17",
+		"Statement": [
+			{
+				"Sid": "PublicRead",
+				"Effect": "Allow",
+				"Principal": "*",
+				"Action": [
+					"s3:GetObject",
+					"s3:GetObjectVersion"
+				],
+				"Resource": "arn:aws:s3:::charleskamalanandpublic/*"
+			}
+		]
+		}
 	```
