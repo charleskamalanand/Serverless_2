@@ -2,9 +2,10 @@ provider "aws" {
   region = "us-east-2"
 }
 
+#Modify the below for region,account number,tag and bucket arn
 variable "All_Variables" {
   type    = list(string)
-  default = ["us-east-2", "951560400874", "Dev", "Deployed from terraform","arn:aws:s3:::product-visits-datalake-43001"]
+  default = ["us-east-2", "9**********4", "Dev", "Deployed from terraform","arn:aws:s3:::product-visits-datalake-43001"]
 }
 
 data "archive_file" "lambda1-zip" {

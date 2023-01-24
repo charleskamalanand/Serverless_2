@@ -12,7 +12,13 @@
 ## Steps to replicate
 * Use main.tf file to replicate this using Terraform.
   Use API_URL output from the terraform CLI and edit the "productDetails.html" and modify line 45 to add something like below
+  
   "https://uzi7m6kxxx.execute-api.us-east-2.amazonaws.com/Dev/sendMessage"
+  
+  Add all below lambda functions in a folder named "lambda" before deploying the code
+  **productVisitsDataHandler.py
+  **productVisitsDatalakeLoadingHandler.py
+  **productVisitsSendDataToQueue
 
 ## PART 1 - SQS - Lambda - DynamoDB Table ##
   
@@ -100,6 +106,7 @@
 		**vi.** Index: productDetails.html (replace account number / region / names as required)
 	
 	Use the below bucket policy
+	
 	```bash
 		{
 		"Version": "2012-10-17",
