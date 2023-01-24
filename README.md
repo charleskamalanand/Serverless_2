@@ -16,6 +16,7 @@
   "https://uzi7m6kxxx.execute-api.us-east-2.amazonaws.com/Dev/sendMessage"
   
   Add all below lambda functions in a folder named "lambda" before deploying the code
+  
   ** productVisitsDataHandler.py
   
   ** productVisitsDatalakeLoadingHandler.py
@@ -105,10 +106,8 @@
 	
 		**v.** Enable static website hosting
 	
-		**vi.** Index: productDetails.html (replace account number / region / names as required)
-	
-	Use the below bucket policy
-	
+		**vi.** Index: productDetails.html (replace account number / region / names as required)	
+	Use the below bucket policy	
 	```bash
 		{
 		"Version": "2012-10-17",
