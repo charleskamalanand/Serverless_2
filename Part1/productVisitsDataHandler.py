@@ -7,9 +7,23 @@ table = dynamodb.Table('ProductVisits')
 
 def lambda_handler(event, context):
     records=event['Records']
+    #print(event)
+    ProductId=""
+    ProductName=""
+    Category=""
+    PricePerUnit=""
+    CustomerId=""
+    CustomerName=""
+    TimeOfVisit=""
     for record in records:
-        products=json.loads(record['body'].replace("\'", "\""))
-        for key,value in products.items():
+    #    products=json.loads(record['body'].replace("\'", "\""))
+        products=record['body']
+        #print(products)
+        #print(type(dict(eval(products))))
+        #print(products[0])
+        actual_products=dict(eval(products))['body']
+        #print(type(dict(eval(actual_products))))
+        for key,value in dict(eval(actual_products)).items():
             if key == "ProductId":
                 ProductId=value
             elif key == "ProductName":
@@ -24,7 +38,7 @@ def lambda_handler(event, context):
                 CustomerName=value
             elif key == "TimeOfVisit":
                 TimeOfVisit=value
-        
+    #print(ProductId)    
     response = table.put_item(
         Item={
             'ProductVisitKey' : str(binascii.b2a_hex(os.urandom(15))),
@@ -37,4 +51,4 @@ def lambda_handler(event, context):
 			'TimeOfVisit' : TimeOfVisit
             })
     print('Loaded date to dynamoDB')
-
+    
