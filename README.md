@@ -22,6 +22,9 @@
   ** productVisitsDatalakeLoadingHandler.py
   
   ** productVisitsSendDataToQueue.py
+  
+  
+  OR follow the below steps to create the infra
 
 ## PART 1 - SQS - Lambda - DynamoDB Table ##
   
@@ -106,7 +109,8 @@
 	
 		**v.** Enable static website hosting
 	
-		**vi.** Index: productDetails.html (replace account number / region / names as required)	
+		**vi.** Index: productDetails.html (replace account number / region / names as required)
+		
 	Use the below bucket policy	
 	```bash
 		{
