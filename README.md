@@ -18,7 +18,7 @@
   Add all below lambda functions in a folder named "lambda" before deploying the code
   **productVisitsDataHandler.py
   **productVisitsDatalakeLoadingHandler.py
-  **productVisitsSendDataToQueue
+  **productVisitsSendDataToQueue.py
 
 ## PART 1 - SQS - Lambda - DynamoDB Table ##
   
