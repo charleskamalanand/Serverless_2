@@ -23,7 +23,7 @@
   
   ** productVisitsSendDataToQueue.py
   
-  terraform init followed by terraform apply -auto-approve
+  "terraform init" followed by "terraform apply -auto-approve"
   
   
   OR follow the below steps to create the infra
